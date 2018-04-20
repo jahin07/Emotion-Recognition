@@ -14,11 +14,11 @@ for x in participants:
 
             emotion = int(float(file.readline())) #emotions are encoded as a float, readline as float, then convert to integer.
 
-            sourcefile_emotion = glob.glob("/Users/jahinmajumdar/Desktop/Emotion_Recognition/source_images//%s//%s//*" %(part, current_session))[-1] #get path for last image in sequence, which contains the emotion
+            sourcefile_emotion = sorted(glob.glob("/Users/jahinmajumdar/Desktop/Emotion_Recognition/source_images//%s//%s//*" %(part, current_session)))[-1] #get path for last image in sequence, which contains the emotion
             #print sourcefile_emotion
             #print len(glob.glob("/Users/jahinmajumdar/Desktop/Emotion_Recognition/source_images//%s//%s//*" %(part, current_session)))
             #print len(glob.glob("source_images//%s//%s//*" %(part, current_session)))
-            sourcefile_neutral = glob.glob("/Users/jahinmajumdar/Desktop/Emotion_Recognition/source_images//%s//%s//*" %(part, current_session))[0] #do same for neutral image
+            sourcefile_neutral = sorted(glob.glob("/Users/jahinmajumdar/Desktop/Emotion_Recognition/source_images//%s//%s//*" %(part, current_session)))[0] #do same for neutral image
             #print sourcefile_neutral
 
             dest_neut = "/Users/jahinmajumdar/Desktop/Emotion_Recognition/sorted_set//neutral//%s" %sourcefile_neutral[-21:] #Generate path to put neutral image
